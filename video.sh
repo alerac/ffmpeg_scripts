@@ -5,11 +5,11 @@
 	echo "Choose your OS (eg: linux or osx) without capital letters, same as example, and press ENTER :"
 	read os
 
-	if [ "$os" ! "linux" ] && ["$os" ! "osx" ];
+	if [ "$os" != "linux" ] && ["$os" != "osx" ];
 	then
 	echo "Too bad ! It can not work with your system. Please enter linux or osx to run the script"
 	
-	exit 1
+	exit 0
 
 	elif [ "$os" == "linux" ];
 	then
