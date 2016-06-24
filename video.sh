@@ -5,7 +5,13 @@
 	echo "Choose your OS (eg: linux or osx) without capital letters, same as example, and press ENTER :"
 	read os
 
-	if [ "$os" == "linux" ];
+	if [ "$os" ! "linux" ] && ["$os" ! "osx" ];
+	then
+	echo "Too bad ! It can not work with your system. Please enter linux or osx to run the script"
+	
+	exit 1
+
+	elif [ "$os" == "linux" ];
 	then
 
 # for Linux, look for your screen resolution (eg: 1920x1080) and enter it when asked for.
@@ -16,8 +22,7 @@
 
 # For osx, type [ffmpeg -f avfoundation -list_devices true -i ""] if you need to know the number related to your screen device. Then type the number related to your screen device when asked for.	
 	
-	elif [ "$os" == "osx" ];
-	then
+	else
 
 	echo "Choose the video device you want to record (eg: 1 or 0 or other number) and press ENTER. You can look which number it is according to your system writing 	      [ffmpeg -f avfoundation -list_devices true -i ""] in your shell."
 
