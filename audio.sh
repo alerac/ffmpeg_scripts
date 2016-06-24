@@ -12,7 +12,7 @@
 # Choose which audio device you want to record writing the number (eg: 1 or 0 or other number) when asked for. The script will adapt the command accorded to your system.
 
 	echo "Choose the audio device you want to record (eg: 1 or 0 or other number) and press ENTER. You can look which number it is according to your system writing 
-[arecord -l] in your shell :" [ffmpeg -f avfoundation -list_devices true -i \"\"]
+[arecord -l] in your shell :"
 	read lindevice
 	
 	elif [ "$os" == "osx" ]
