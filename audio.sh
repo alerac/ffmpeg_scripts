@@ -36,7 +36,7 @@
 # Choose the path where you want to record audio writing the path when asked for.
 
 	echo "Choose the path where you want to record audio and press ENTER :"
-	read path
+	read -e path
 
 # Choose the name you want for your audio file writing the name when asked for.
 
@@ -47,12 +47,12 @@
 
 	if [ "$os" == "linux" ] && [ -n $path ] && [ -n $name ];
 	then
-	ffmpeg -f alsa -i hw:$lindevice -c:a aac -qp 0 -preset ultrafast $path/$name.aac
+	ffmpeg -f alsa -i hw:$lindevice -c:a aac -qp 0 -preset ultrafast $path$name.aac
 	echo "audio stream successfully recorded"
 
 	elif [ "$os" == "osx" ] && [ -n $path ] && [ -n $name ];
 	then
-	ffmpeg -f avfoundation -i ":$osxdevice" -c:a aac -qp 0 -preset ultrafast $path/$name.aac
+	ffmpeg -f avfoundation -i ":$osxdevice" -c:a aac -qp 0 -preset ultrafast $path$name.aac
 	echo "audio stream successfully recorded"
 	
 	fi

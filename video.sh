@@ -37,7 +37,7 @@
 # Choose the path where you want to record video writing the path when asked for. The path should be the same as the audio file previously recorded for future works.
 
 	echo "Choose the path where you want to record video and press ENTER :"
-	read path
+	read -e path
 
 # Choose the name you want for your video file writing the name when asked for.
 
@@ -49,13 +49,13 @@
 	if [ "$os" == "linux" ] && [ -n $path ] && [ -n $name ];
 	then
 
-	ffmpeg  -video_size "$reslinux" -framerate 30 -f x11grab -i :0.0 -c:v libx264 -qp 0 -preset ultrafast $path/$name.mp4
+	ffmpeg  -video_size "$reslinux" -framerate 30 -f x11grab -i :0.0 -c:v libx264 -qp 0 -preset ultrafast $path$name.mp4
 	echo "video stream successfully recorded"
 	
 	elif [ "$os" == "osx" ] && [ -n $path ] && [ -n $name ];
 	then
 
-	ffmpeg -f avfoundation -capture_cursor 1 -capture_mouse_clicks 1 -i "$resosx" -c:v libx264 -qp 0 -preset ultrafast $path/$name.mp4
+	ffmpeg -f avfoundation -capture_cursor 1 -capture_mouse_clicks 1 -i "$resosx" -c:v libx264 -qp 0 -preset ultrafast $path$name.mp4
 	echo "video stream successfully recorded"
 	
 	fi

@@ -6,7 +6,7 @@
 # Enter the path to the folder which contains the audio and video files previously recorded. Audio and video files should be in the same folder.
 
 	echo "Write the path to folder containing the audio and video files previously recorded and press ENTER :"
-	read path
+	read -e path
 
 # For the audio.aac file cut the file from the time [HH:MM:SS] for a duration of [HH:MM:SS] eg: from second 3 until second 30 put 00:00:03 -t 00:00:27.
 # And rename the file with "_cut".
