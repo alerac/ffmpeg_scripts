@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# [CC licence Attribution - no commercial usage - Share alike 4.0 International http://creativecommons.org/licenses/by-nc-sa/4.0/] [24.06.2016]
+# [CC licence Attribution - no commercial usage - Share alike 4.0 International http://creativecommons.org/licenses/by-nc-sa/4.0/] [07.07.2016]
 # Contributors: [Alexandre Racine] <alexandre.racine1@gmail.com> | [Igor Milhit] <igor@milhit.ch>
 
 # Enter the path to the folder which contains the audio and video files previously recorded. Audio and video files should be in the same folder.
