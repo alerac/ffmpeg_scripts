@@ -3,23 +3,26 @@
 # [CC licence Attribution - no commercial usage - Share alike 4.0 International http://creativecommons.org/licenses/by-nc-sa/4.0/] [24.06.2016]
 # Contributors: [Alexandre Racine] <alexandre.racine1@gmail.com> | [Igor Milhit] <igor@milhit.ch>
 
-# Choose your os writing "linux" or "osx" without capital letters. The script will adapt the command accorded to your system.
-
-	echo "Choose your OS (eg: linux or osx) without capital letters, same as example, and press ENTER :"
-	read os
-
+	os=$(uname -s)
 # for Linux, look for your screen resolution (eg: 1920x1080) and enter it when asked for.
 
-	if [ "$os" == "linux" ]
+	if [ "$os" == "Linux" ]
 	then
 	echo "Enter your screen resolution as this example (eg: 1920x1080) and press ENTER :"
 
 	read reslinux
 
+	disp=$DISPLAY
+
+# Look for your screen device number (eg: 1 or 0 or other number) and enter it when asked for.
+
+	echo "Enter you screen device number (eg: 1 or 0 or other number) and press ENTER. You can find this number by writing [arecord -l] in your shell :"
+
+	read linscreen
 # For osx, type [ffmpeg -f avfoundation -list_devices true -i ""] if you need to know the number related to your screen device. Then type the number related to your screen 
 # device when asked for.
 
-	elif [ "$os" == "osx" ]
+	elif [ "$os" == "Darwin" ]
 	then
 
 	echo "Choose the video device you want to record (eg: 1 or 0 or other number) and press ENTER. You can look which number it is according to your system writing 
@@ -46,13 +49,13 @@
 
 # This part will adapt the video record command accorded to the informations you provided.	
 
-	if [ "$os" == "linux" ] && [ -n $path ] && [ -n $name ];
+	if [ "$os" == "Linux" ] && [ -n $path ] && [ -n $name ];
 	then
 
-	ffmpeg  -video_size "$reslinux" -framerate 30 -f x11grab -i :0.0 -c:v libx264 -qp 0 -preset ultrafast $path$name.mp4
+	ffmpeg  -video_size "$reslinux" -framerate 30 -f x11grab -i "$disp"."$linscreen" -c:v libx264 -qp 0 -preset ultrafast $path$name.mp4
 	echo "video stream successfully recorded"
 	
-	elif [ "$os" == "osx" ] && [ -n $path ] && [ -n $name ];
+	elif [ "$os" == "Darwin" ] && [ -n $path ] && [ -n $name ];
 	then
 
 	ffmpeg -f avfoundation -capture_cursor 1 -capture_mouse_clicks 1 -i "$resosx" -c:v libx264 -qp 0 -preset ultrafast $path$name.mp4
