@@ -43,6 +43,8 @@
 
 # If your system is neither Linux nor OS X then the script will end here.
 
+	else
+
 	echo "Your system is neither linux nor OS X so this program won't work for now. Please try it with one of these os"
 	exit 1
 
