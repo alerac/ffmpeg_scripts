@@ -12,10 +12,10 @@
 	if [ "$os" == "Linux" ]
 	then
 	
-# Choose which audio device you want to record writing the number (eg: 1 or 0 or other number) when asked for. The script will adapt the command accorded to your system.
+# Choose which audio device you want to record writing the number (e.g. 1 or 0 or other number) when asked for. The script will adapt the command accorded to your system.
 # To find the number related to your prefered audio device please type "arecord -l" in another terminal prompt.
 
-	echo "Choose the audio device you want to record (eg: 1 or 0 or other number) and press ENTER. You can look which number it is according to your system writing 
+	echo "Choose the audio device you want to record (e.g. 1 or 0 or other number) and press ENTER. You can look which number it is according to your system writing 
 [arecord -l] in your shell :"
 	read lindevice
 	
@@ -26,7 +26,7 @@
 
 # Do the same but the command to find your prefered device is ffmpeg -f avfoundation -list_devices true -i ""
 
-	echo "Choose the audio device you want to record (eg: 1 or 0 or other number) and press ENTER. You can look which number it is according to your system writing
+	echo "Choose the audio device you want to record (e.g. 1 or 0 or other number) and press ENTER. You can look which number it is according to your system writing
 [ffmpeg -f avfoundation -list_devices true -i \"\"] :"
 
 	read osxdevice

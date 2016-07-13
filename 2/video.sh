@@ -12,9 +12,9 @@
 	if [ "$os" == "Linux" ]
 	then
 
-# Look for your screen resolution (eg: 1920x1080) and enter it when asked for.
+# Look for your screen resolution (e.g. 1920x1080) and enter it when asked for.
 
-	echo "Enter your screen resolution as this example (eg: 1920x1080) and press ENTER :"
+	echo "Enter your screen resolution as this example (e.g. 1920x1080) and press ENTER :"
 
 	read reslinux
 
@@ -22,10 +22,10 @@
 
 	disp=$DISPLAY
 
-# Look for your screen device number (eg: 1 or 0 or other number) and enter it when asked for. The script will adapt the command accorded to your system.
+# Look for your screen device number (e.g. 1 or 0 or other number) and enter it when asked for. The script will adapt the command accorded to your system.
 # To find the number related to your prefered device please type "arecord -l" in another terminal prompt.
 
-	echo "Enter you screen device number (eg: 1 or 0 or other number) and press ENTER. You can find this number by writing [arecord -l] in your shell :"
+	echo "Enter you screen device number (e.g. 1 or 0 or other number) and press ENTER. You can find this number by writing [arecord -l] in your shell :"
 
 	read linscreen
 
@@ -36,7 +36,7 @@
 
 # Do the same but the command to find your prefered device is ffmpeg -f avfoundation -list_devices true -i ""
 
-	echo "Choose the video device you want to record (eg: 1 or 0 or other number) and press ENTER. You can look which number it is according to your system writing 
+	echo "Choose the video device you want to record (e.g. 1 or 0 or other number) and press ENTER. You can look which number it is according to your system writing 
 [ffmpeg -f avfoundation -list_devices true -i \"\"] in your shell. :"
 
 	read resosx

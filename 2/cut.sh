@@ -14,11 +14,11 @@
 	for name in "${path%}"*_all.mp4; do
 	ffmpeg -i "$name" -ss 00:00:02 -t 00:00:32 -async 1 -strict -2 "${name%.mp4}"_cut.mp4;
 	done
-	for name in "${path%}"*_all.mp4; do
-	ffmpeg -i "$name" -ss 00:00:02 -t 00:00:32 -c:v libxvid -qscale:v 3 -async 1 -strict -2 "${name%.mp4}"_cut.mov;
+	for name in "${path%}"*_cut.mp4; do
+	ffmpeg -i "$name" -c:v libxvid -qscale:v 3 -async 1 -strict -2 "${name%.mp4}".mov;
 	done
-	for name in "${path%}"*_all.mp4; do
-	ffmpeg -i "$name" -ss 00:00:02 -t 00:00:32 -c:v libvpx -crf 18 -c:a libvorbis -b:v 0 -async 1 -strict -2 "${name%.mp4}"_cut.webm;
+	for name in "${path%}"*_cut.mp4; do
+	ffmpeg -i "$name" -c:v libvpx -crf 18 -c:a libvorbis -b:v 0 -async 1 -strict -2 "${name%.mp4}".webm;
 	done
 
 	echo "Video successfully cut and converted"
