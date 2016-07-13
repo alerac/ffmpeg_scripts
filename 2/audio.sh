@@ -42,7 +42,7 @@
 
 # Choose the path where you want to record audio writing it when asked for.
 
-	echo "Choose the path where you want to record audio and press ENTER :"
+	echo "Choose the path where you want to record audio and press ENTER. You must specify the path where the previous video file is located for merging purposes at the end of this script :"
 	read -e path
 
 # Choose the name you want for your audio file writing it when asked for.
